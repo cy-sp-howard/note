@@ -44,3 +44,10 @@ public abstract class Shape
 // virtual: 標記繼承後可被override
 // delegate: 建立委託型別(函式宣告型式)，用該型別建立的變數，可以指派類似的函式或使用+=指派複數函式
 ```
+```csharp
+// funciton 的":"號之後，可以接base()或this()呼叫constructor
+public MyClass(int x) : base(SomeOtherMethod(x))
+{
+    // 構造函數體
+}
+```
