@@ -1,0 +1,29 @@
+*** 先至nuget安裝 microsoft speech依賴
+```csharp
+// See https://aka.ms/new-console-template for more information
+using System.Globalization;
+using System.Speech.Synthesis;
+SpeechSynthesizer synth = new SpeechSynthesizer();
+
+// Configure the audio output.
+synth.SetOutputToDefaultAudioDevice();
+
+var a = synth.GetInstalledVoices();
+foreach (var item in a)
+{
+    if(item.VoiceInfo.Culture.Name == "ja-JP" && item.Enabled && !item.VoiceInfo.Name.Contains("Desktop"))
+    {
+
+        Console.WriteLine(item.VoiceInfo.Name);
+        synth.SelectVoice(item.VoiceInfo.Name);
+        synth.Speak("こんにちは、世界！");
+    }
+}
+
+synth.Speak("Hello, World!");
+//synth.SelectVoiceByHints(VoiceGender.Female, VoiceAge.Adult, 0, new CultureInfo("ja-JP"));
+
+// Speak a string, synchronously
+
+Console.WriteLine("Hello, World!");
+```
