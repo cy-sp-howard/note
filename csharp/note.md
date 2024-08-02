@@ -22,3 +22,24 @@ public string Name
 set;
 }
 ```
+
+```csharp
+// abstract calss 裡面可包含abstract 或非abstract；僅提供繼承用，無法自己實例化
+// abstract不提供實現方式
+public abstract class Shape
+{
+    public abstract double CalculateArea();
+    
+    public void DisplayInfo()
+    {
+        Console.WriteLine($"Area: {CalculateArea()}");
+    }
+}
+// private: 只在聲明的類內部可見
+// public: 對所有類可見
+// protected: 聲明的類內部可見、繼承的類可見
+// internal: 在同一程序集內可見；開放給其他程序使用 [assembly: InternalsVisibleTo("OtherAssemblyName")]
+// protected internal: 在同一程序集內或派生類中可見
+// static: 無須實例化，即可調用
+// virtual: 標記繼承後可被override
+```
