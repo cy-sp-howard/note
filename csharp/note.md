@@ -42,10 +42,7 @@ public abstract class Shape
 // protected internal: 在同一程序集內或派生類中可見
 // static: 無須實例化，即可調用
 // Abc 不能被 new()
-static class Abc 
-{
-
-}
+static class Abc {}
 // Abc constructor 在該類第一次被實例化後執行唯一一次(可用作設定其他static 初始值)
 public class Abc
 {
