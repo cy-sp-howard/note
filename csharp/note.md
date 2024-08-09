@@ -24,7 +24,7 @@ set;
 ```
 
 ```csharp
-// abstract calss 裡面可包含abstract 或非abstract；僅提供繼承用，無法自己實例化
+// abstract class 裡面可包含abstract 或非abstract；僅提供繼承用，無法自己實例化
 // abstract不提供實現方式
 public abstract class Shape
 {
@@ -41,6 +41,17 @@ public abstract class Shape
 // internal: 在同一程序集內可見；開放給其他程序使用 [assembly: InternalsVisibleTo("OtherAssemblyName")]
 // protected internal: 在同一程序集內或派生類中可見
 // static: 無須實例化，即可調用
+// Abc 不能被 new()
+static class Abc 
+{
+
+}
+// Abc constructor 在該類第一次被實例化後執行唯一一次(可用作設定其他static 初始值)
+public class Abc
+{
+    static public int Val;
+    static Abc(){Val = 1;}
+}
 // virtual: 標記繼承後可被override
 // delegate: 建立委託型別(函式宣告型式)，用該型別建立的變數，可以指派類似的函式或使用+=指派複數函式
 ```
