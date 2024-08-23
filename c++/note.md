@@ -5,13 +5,4 @@
 ADD_LIBRARY(lib STATIC show.cpp other.cpp) #漏了不會報錯
 ADD_LIBRARY(lib SHARED show.cpp other.cpp) #漏了彙報錯
 ```
-## function 順序
-first 沒辦法呼叫 second，除非將second設成static
-```c
-void first(){
-  second()
-}
-// static void second()
-void second(){
-}
-```
+
