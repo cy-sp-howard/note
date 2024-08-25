@@ -17,5 +17,13 @@ lea ecx,[esp+0C]
 
 //此為取該地址的內值
 lea rax,[gw2-64.exe+21587898]
+
+ax 同常是回傳
+edi arg1
+esi arg2
+edx arg3
+ecx arg4
+r8d arg5
+r9d arg6
 ```
 
