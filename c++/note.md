@@ -27,10 +27,10 @@ r8d arg5
 r9d arg6
 ```
 
-## opcode
+## pointer
 char str1[20] = "Hello";
-printf() 會從 str1 指向的記憶體地址開始，逐一讀取字元，直到遇到 null 字元 ('\0') 為止
-str1本身就是一格pointer
-*str1 會得到"H"，因為第一個記憶體位置存的就是H
+printf() 會從 str1 指向的記憶體地址開始，逐一讀取字元，直到遇到 null 字元 ('\0') 為止  
+str1本身就是一格pointer  
+*str1 會得到"H"，因為第一個記憶體位置存的就是H  
 
 
