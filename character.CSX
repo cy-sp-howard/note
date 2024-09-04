@@ -1,6 +1,6 @@
 
 <Structures>
-  <Structure Name="unnamed structure" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
+  <Structure Name="character" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
     <Elements>
       <Element Offset="0" Vartype="Pointer" Bytesize="8" OffsetHex="00000000" DisplayMethod="unsigned integer">
         <Structure Name="Autocreated from 7FF6B117FA90" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
@@ -3757,7 +3757,7 @@
         </Structure>
       </Element>
       <Element Offset="136" Vartype="Pointer" Bytesize="8" RLECount="2" OffsetHex="00000088" DisplayMethod="unsigned integer"/>
-      <Element Offset="152" Vartype="Pointer" Bytesize="8" OffsetHex="00000098" DisplayMethod="unsigned integer">
+      <Element Offset="152" Vartype="Pointer" Bytesize="8" OffsetHex="00000098" Description="agent???????" DisplayMethod="unsigned integer">
         <Structure Name="Autocreated from 26C2F4BAD50" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
           <Elements>
             <Element Offset="0" Vartype="Pointer" Bytesize="8" OffsetHex="00000000" DisplayMethod="unsigned integer"/>
