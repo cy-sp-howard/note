@@ -1,0 +1,53 @@
+
+[ENABLE]
+
+aobscanmodule(INJECT,Gw2-64.exe,0F B7 01 49 FF C8) // should be unique
+alloc(newmem,$1000,INJECT)
+alloc(strArea,$1000,INJECT)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+{$CCODE charBase=RCX}
+extern long long strArea;
+
+long long* strAreaAry = &strArea;
+
+char lakefishChar[] = "Lake Fish";
+short* targetChar = (short*)charBase;
+
+int lastMatchIndex = 0;
+while (lakefishChar[lastMatchIndex] && targetChar[lastMatchIndex] && lakefishChar[lastMatchIndex] == targetChar[lastMatchIndex]) {
+  lastMatchIndex++;
+}
+int result = lakefishChar[lastMatchIndex] - targetChar[lastMatchIndex];
+
+strAreaAry[1] = charBase;
+if(result == 0)
+  strAreaAry[0] = charBase;
+
+{$ASM}
+  movzx eax,word ptr [rcx]
+  dec r8
+  jmp return
+
+
+INJECT:
+  jmp newmem
+  nop
+return:
+registersymbol(INJECT)
+registersymbol(strArea)
+
+[DISABLE]
+
+INJECT:
+  db 0F B7 01 49 FF C8
+
+unregistersymbol(INJECT)
+unregistersymbol(strArea)
+dealloc(newmem)
+dealloc(strArea)
