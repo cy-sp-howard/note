@@ -1,0 +1,41 @@
+[ENABLE]
+
+aobscanmodule(INJECT,Gw2-64.exe,48 89 74 24 30 48 85 F6 0F) // should be unique
+alloc(newmem,$1000,INJECT)
+alloc(buffer,$1000,INJECT)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+{$CCODE bind_base=RSI index_base=RSP}
+extern int buffer;
+if((long long)bind_base != 0) {
+  int code = *(int*)((long long)bind_base+0x34);
+  if(code == 80){
+    buffer = *(int*)((long long)index_base+0xA8);
+  }
+}
+
+
+{$ASM}
+  mov [rsp+30],rsi
+  jmp return
+
+INJECT:
+  jmp newmem
+return:
+registersymbol(INJECT)
+registersymbol(buffer)
+
+[DISABLE]
+
+INJECT:
+  db 48 89 74 24 30
+
+unregistersymbol(INJECT)
+unregistersymbol(buffer)
+dealloc(newmem)
+dealloc(buffer)
