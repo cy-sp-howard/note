@@ -1,0 +1,75 @@
+{ Game   : Gw2-64.exe
+  Version: 
+  Date   : 2024-09-09
+  Author : Yeh
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(INJECT,Gw2-64.exe,66 89 34 48 41 FF 46 14) // should be unique
+alloc(newmem,$1000,INJECT)
+alloc(buffer,$8,INJECT)
+
+label(code)
+label(return)
+
+newmem:
+code:
+{$CCODE text=RSI}
+extern short buffer;
+buffer = text;
+if(text == 0x4c) {
+buffer = (short)0x78;
+}
+{$ASM}
+  mov si,[buffer]
+  mov [rax+rcx*2],si
+  inc [r14+14]
+  jmp return
+
+INJECT:
+  jmp newmem
+  nop 3
+return:
+registersymbol(INJECT)
+registersymbol(buffer)
+
+[DISABLE]
+
+INJECT:
+  db 66 89 34 48 41 FF 46 14
+
+unregistersymbol(INJECT)
+unregistersymbol(buffer)
+dealloc(newmem)
+dealloc(buffer)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Gw2-64.exe+50AB3A
+
+Gw2-64.exe+50AB18: E8 83 76 D7 FF  - call Gw2-64.exe+2821A0
+Gw2-64.exe+50AB1D: FF CB           - dec ebx
+Gw2-64.exe+50AB1F: 85 ED           - test ebp,ebp
+Gw2-64.exe+50AB21: 0F 44 DD        - cmove ebx,ebp
+Gw2-64.exe+50AB24: 41 8B 56 14     - mov edx,[r14+14]
+Gw2-64.exe+50AB28: 49 8B CE        - mov rcx,r14
+Gw2-64.exe+50AB2B: FF C2           - inc edx
+Gw2-64.exe+50AB2D: E8 BE 93 D5 FF  - call Gw2-64.exe+263EF0
+Gw2-64.exe+50AB32: 41 8B 4E 14     - mov ecx,[r14+14]
+Gw2-64.exe+50AB36: 49 8B 46 08     - mov rax,[r14+08]
+// ---------- INJECTING HERE ----------
+Gw2-64.exe+50AB3A: 66 89 34 48     - mov [rax+rcx*2],si
+// ---------- DONE INJECTING  ----------
+Gw2-64.exe+50AB3E: 41 FF 46 14     - inc [r14+14]
+Gw2-64.exe+50AB42: 48 83 C7 02     - add rdi,02
+Gw2-64.exe+50AB46: 49 3B FF        - cmp rdi,r15
+Gw2-64.exe+50AB49: 75 A5           - jne Gw2-64.exe+50AAF0
+Gw2-64.exe+50AB4B: 4C 8B 64 24 50  - mov r12,[rsp+50]
+Gw2-64.exe+50AB50: 48 8B 74 24 48  - mov rsi,[rsp+48]
+Gw2-64.exe+50AB55: 48 8B 6C 24 40  - mov rbp,[rsp+40]
+Gw2-64.exe+50AB5A: 48 8B 5C 24 58  - mov rbx,[rsp+58]
+Gw2-64.exe+50AB5F: 48 83 C4 20     - add rsp,20
+Gw2-64.exe+50AB63: 41 5F           - pop r15
+}
