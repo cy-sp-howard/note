@@ -3762,7 +3762,7 @@
           <Elements>
             <Element Offset="0" Vartype="Pointer" Bytesize="8" OffsetHex="00000000" DisplayMethod="unsigned integer"/>
             <Element Offset="8" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000008" DisplayMethod="unsigned integer"/>
-            <Element Offset="12" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000000C" Description="ID" DisplayMethod="unsigned integer"/>
+            <Element Offset="12" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000000C" Description="ID" DisplayMethod="hexadecimal"/>
             <Element Offset="20" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000014" DisplayMethod="unsigned integer"/>
             <Element Offset="24" Vartype="Pointer" Bytesize="8" OffsetHex="00000018" DisplayMethod="unsigned integer"/>
             <Element Offset="32" Vartype="4 Bytes" Bytesize="4" RLECount="3" OffsetHex="00000020" DisplayMethod="hexadecimal"/>
