@@ -4107,9 +4107,13 @@
       <Element Offset="204" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000CC" DisplayMethod="hexadecimal"/>
       <Element Offset="208" Vartype="4 Bytes" Bytesize="4" RLECount="5" OffsetHex="000000D0" DisplayMethod="unsigned integer"/>
       <Element Offset="228" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E4" DisplayMethod="hexadecimal"/>
-      <Element Offset="232" Vartype="Float" Bytesize="4" RLECount="3" OffsetHex="000000E8" DisplayMethod="unsigned integer"/>
+      <Element Offset="232" Vartype="Float" Bytesize="4" OffsetHex="000000E8" Description="x" DisplayMethod="unsigned integer"/>
+      <Element Offset="236" Vartype="Float" Bytesize="4" OffsetHex="000000EC" Description="y" DisplayMethod="unsigned integer"/>
+      <Element Offset="240" Vartype="Float" Bytesize="4" OffsetHex="000000F0" Description="z" DisplayMethod="unsigned integer"/>
       <Element Offset="244" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000F4" DisplayMethod="unsigned integer"/>
-      <Element Offset="248" Vartype="Float" Bytesize="4" RLECount="3" OffsetHex="000000F8" DisplayMethod="unsigned integer"/>
+      <Element Offset="248" Vartype="Float" Bytesize="4" OffsetHex="000000F8" Description="x" DisplayMethod="unsigned integer"/>
+      <Element Offset="252" Vartype="Float" Bytesize="4" OffsetHex="000000FC" Description="y" DisplayMethod="unsigned integer"/>
+      <Element Offset="256" Vartype="Float" Bytesize="4" OffsetHex="00000100" Description="z" DisplayMethod="unsigned integer"/>
       <Element Offset="260" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000104" DisplayMethod="unsigned integer"/>
       <Element Offset="268" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000010C" DisplayMethod="hexadecimal"/>
       <Element Offset="272" Vartype="Pointer" Bytesize="8" OffsetHex="00000110" DisplayMethod="unsigned integer"/>
