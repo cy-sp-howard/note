@@ -3876,7 +3876,7 @@
             <Element Offset="1224" Vartype="Pointer" Bytesize="8" RLECount="2" OffsetHex="000004C8" DisplayMethod="unsigned integer"/>
             <Element Offset="1240" Vartype="4 Bytes" Bytesize="4" RLECount="3" OffsetHex="000004D8" DisplayMethod="unsigned integer"/>
             <Element Offset="1252" Vartype="4 Bytes" Bytesize="4" OffsetHex="000004E4" Description="resource" DisplayMethod="hexadecimal"/>
-            <Element Offset="1256" Vartype="4 Bytes" Bytesize="4" OffsetHex="000004E8" DisplayMethod="hexadecimal"/>
+            <Element Offset="1256" Vartype="4 Bytes" Bytesize="4" OffsetHex="000004E8" Description="count" DisplayMethod="hexadecimal"/>
             <Element Offset="1260" Vartype="4 Bytes" Bytesize="4" OffsetHex="000004EC" DisplayMethod="unsigned integer"/>
             <Element Offset="1264" Vartype="4 Bytes" Bytesize="4" RLECount="5" OffsetHex="000004F0" DisplayMethod="hexadecimal"/>
             <Element Offset="1284" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000504" DisplayMethod="unsigned integer"/>
