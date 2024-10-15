@@ -13,3 +13,9 @@ python312.zip
 import site
 
 ```
+##### 安裝 modules
+https://pip.pypa.io/en/stable/installation/#get-pip-py
+```powershell
+./python.exe ./get-pip.py
+./python.exe -m pip install argostranslate
+```
