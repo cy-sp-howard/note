@@ -6,7 +6,7 @@ https://github.com/argosopentech/argos-translate
 ```cmd
 ./python.exe ./Scripts/argospm install translate-ja_en
 ./python.exe ./Scripts/argospm install translate-en_zh
-./python.exe ./Scripts/argos-translate --from-lang ja --to-lang zh
+./python.exe ./Scripts/argos-translate --from-lang ja --to-lang zh "文字"
 ```
 
 1. 翻譯
