@@ -1,3 +1,5 @@
+#### 美化.net publish 檔案
+https://github.com/nulastudio/NetBeauty2
 ```csharp
 SpeechSynthesizer synth = new ();
 //等同於
