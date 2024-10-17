@@ -42,6 +42,16 @@ public abstract class Shape
 // protected: 聲明的類內部可見、繼承的類可見
 // internal: 在同一程序集內可見；開放給其他程序使用 [assembly: InternalsVisibleTo("OtherAssemblyName")]
 // protected internal: 在同一程序集內或派生類中可見
+// sealed: 被繼承後不可修改
+public class BaseClass
+{
+    public virtual void MyMethod() { }
+}
+
+public class DerivedClass : BaseClass
+{
+    public sealed override void MyMethod() { } // 若要繼承DerivedClass，不可override
+}
 // static: 無須實例化，即可調用
 // Abc 不能被 new()
 static class Abc {}
