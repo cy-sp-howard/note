@@ -71,3 +71,14 @@ public MyClass(int x) : base(SomeOtherMethod(x))
     // 構造函數體
 }
 ```
+```csharp
+// 直接擴充MyClass methods
+void abv(this MyClass ccc){
+    return 	ccc;
+}
+
+MyClass a = new MyClass();
+// MyClass 會出現abv method;
+a.abv(); 
+
+```
